@@ -2,7 +2,7 @@
     <div class="container">
         <!-- Branding Image -->
         <a class="navbar-brand " href="{{ url('/') }}">
-            LaraBBS
+            在郑航校园服务平台
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,12 +41,12 @@
                                 </a>
                                 <div class="dropdown-divider"></div>
                             @endcan
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="{{ route('users.show',Auth::id()) }}">
                                 <i class="far fa-user mr-2"></i>
                                 个人中心
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="{{ route('users.edit',Auth::id()) }}">
                                 <i class="far fa-edit mr-2"></i>
                                 编辑资料
                             </a>
