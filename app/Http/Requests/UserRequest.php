@@ -28,7 +28,7 @@ class UserRequest extends FormRequest
             'name' => 'required|between:3,25|regex:/^[\x80-\xff_A-Za-z0-9-_]+$/|unique:users,name,' . Auth::id(),
             'email' => 'required|email',
             'introduction' => 'max:80',
-            'avatar' => 'mimes:jpeg,bmp,png,gif|dimensions:min_width=208,min_height=208',
+            'avatar' => 'mimes:jpg,jpeg,bmp,png,gif|dimensions:min_width=208,min_height=208',
         ];
     }
 //更新信息提示消息

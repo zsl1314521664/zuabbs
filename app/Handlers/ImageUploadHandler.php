@@ -8,7 +8,7 @@ class ImageUploadHandler
 {
     protected $allowed_ext = ["png", "jpg", "gif", 'jpeg'];
 
-    public function save($file, $folder, $file_prefix)
+    public function save($file, $folder, $file_prefix,$max_width = false)
     {
         // 构建存储的文件夹规则，值如：uploads/images/avatars/201709/21/
         // 文件夹切割能让查找效率更高。
@@ -34,11 +34,11 @@ class ImageUploadHandler
         $file->move($upload_path, $filename);
 
         // 如果限制了图片宽度，就进行裁剪
-//        if ($max_width && $extension != 'gif') {
-//
-//            // 此类中封装的函数，用于裁剪图片
-//            $this->reduceSize($upload_path . '/' . $filename, $max_width);
-//        }
+        if ($max_width && $extension != 'gif') {
+
+            // 此类中封装的函数，用于裁剪图片
+            $this->reduceSize($upload_path . '/' . $filename, $max_width);
+        }
 
         return [
             'path' => config('app.url') . "/$folder_name/$filename"
