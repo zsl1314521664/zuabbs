@@ -34,9 +34,9 @@ class UsersController extends Controller
 //        dd($data);
         if($request->avatar){
             $result=$uploader->save($request->avatar,'avatars',$user->id,416);
-        }
-        if($result){
-            $data['avatar']=$result['path'];
+            if($result){
+                $data['avatar']=$result['path'];
+            }
         }
 //        $user->update($request->all());
         $user->update($data);
