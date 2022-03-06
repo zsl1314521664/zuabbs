@@ -63,8 +63,6 @@ class TopicsController extends Controller
 	{
 		$this->authorize('destroy', $topic);
 		$topic->delete();
-		$topic->delete();
-
 		return redirect()->route('topics.index')->with('success', '删除成功！');
 	}
 //	文本框上传图片
