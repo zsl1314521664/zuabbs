@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title','ZUABBS')-在郑航校园生活服务平台</title>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @yield('styles')
 </head>
 <body>
     <div id="app" class="{{ route_class() }}-page">
@@ -20,5 +21,6 @@
         @include('layouts._footer')
     </div>
     <script src="{{ mix('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>
