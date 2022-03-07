@@ -39,6 +39,6 @@
         @if ( ! $loop->last)
             <hr>
         @endif
-
     @endforeach
+
 </ul>
