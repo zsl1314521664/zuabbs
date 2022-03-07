@@ -69,7 +69,8 @@
         <div class="card-body">
           @includeWhen(Auth::check(), 'topics._reply_box', ['topic' => $topic])
 {{--          @include('topics._reply_box',['topic'=>$topic])--}}
-          @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
+          @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->orderBy('created_at','desc')->paginate(10)])
+{{--          @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])--}}
         </div>
       </div>
 

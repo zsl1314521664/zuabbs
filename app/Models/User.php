@@ -19,7 +19,7 @@ class User extends Authenticatable implements MustVerifyEmailContract
      *
      * @var array
      */
-
+//消息通知
     public function notify($instance)
     {
         // 如果要通知的人是当前用户，就不必通知了！
@@ -33,6 +33,13 @@ class User extends Authenticatable implements MustVerifyEmailContract
         }
 
         $this->laravelNotify($instance);
+    }
+//    清除消息通知
+    public function markAsRead()
+    {
+        $this->notification_count = 0;
+        $this->save();
+        $this->unreadNotifications->markAsRead();
     }
     protected $fillable = [
         'name', 'email', 'password','introduction','avatar',

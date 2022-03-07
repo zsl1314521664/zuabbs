@@ -40,5 +40,7 @@
             <hr>
         @endif
     @endforeach
-
+        <div class="mt-5">
+            {!! $replies->render() !!}
+        </div>
 </ul>
