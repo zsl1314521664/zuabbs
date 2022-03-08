@@ -24,4 +24,9 @@ class TopicObserver
         $topic->body=clean($topic->body,'user_topic_body');
         $topic->excerpt=make_excerpt($topic->body);
     }
+//    删除话题后删除全部评论
+    public function deleted(Topic $topic)
+    {
+        \DB::table('replies')->where('topic_id', $topic->id)->delete();
+    }
 }
