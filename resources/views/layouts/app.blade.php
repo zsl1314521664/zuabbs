@@ -7,8 +7,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title','ZUABBS')-在郑航校园生活服务平台</title>
-    <meta name="description" content="@yield('description','ZUABBS','在郑航校园生活服务平台')" />
+    <title>@yield('title','ZUABBS')-{{ setting('site_name','在郑航校园生活服务平台') }}</title>
+    <meta name="description" content="@yield('description', setting('seo_description', '在郑航校园生活服务平台'))" />
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
