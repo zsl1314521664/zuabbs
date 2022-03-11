@@ -5,6 +5,7 @@
         </a>
     </div>
 </div>
+
 @if (count($links))
     <div class="card mt-4">
         <div class="card-body pt-2">

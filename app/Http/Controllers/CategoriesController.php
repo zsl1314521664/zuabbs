@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
+    public function __construct(Category $category)
+    {
+        $categories=$category->getAllCached();
+//        dd($categories);
+//        return view('layouts.app',compact('categories'));
+    }
+
     public function show(Category $category,Request $request,Topic $topic,Link $link)
     {
 //        $topics=Topic::where('category_id',$category->id)->paginate(20);
