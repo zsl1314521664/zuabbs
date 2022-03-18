@@ -17112,6 +17112,31 @@ body {
   font-size: 14px;
 }
 
+.nav-top {
+  height: 125px;
+  text-align: center;
+  letter-spacing: 8px;
+  font-size: 36px;
+  vertical-align: middle;
+  background-image: url("/uploads/images/static/school.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav-title {
+  position: relative;
+  top: 23%;
+}
+
+.nav-title img {
+  padding-right: 15px;
+  opacity: 0.85;
+}
+
+.nav-middle {
+  font-size: 1.3rem;
+}
+
 .navbar-static-top {
   border-color: #e7e7e7;
   background-color: #fff;
@@ -17665,6 +17690,40 @@ body {
 .topic-body pre code:before,
 .topic-body pre code:after {
   content: normal;
+}
+
+.trans-img {
+  overflow: hidden;
+}
+
+.trans-img img {
+  width: 200px;
+  height: 120px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.trans-img img:hover {
+  transform: scale(1.07);
+}
+
+.afont a {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.afont a:hover {
+  color: #6cb2eb;
+}
+
+.cfont {
+  text-indent: 2em;
+}
+
+.cfont a {
+  text-decoration: none;
 }
 
 .topics-show-page .card {

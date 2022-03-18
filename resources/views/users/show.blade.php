@@ -14,10 +14,11 @@
                     <p>{{ $user->introduction }}</p>
                     <hr>
                     <h5><strong>注册于</strong></h5>
-                    <p>{{ $user->created_at->diffForHumans() }}</p>
+{{--                    <p>{{ $user->created_at->diffForHumans() }}</p>--}}
+                    <p>{{ $user->created_at }}</p>
 {{--                    {{ dd($user->created_at) }}--}}
                     <hr>
-                    <h5><strong>最后活跃</strong></h5>
+{{--                    <h5><strong>最后活跃</strong></h5>--}}
 {{--                    <p title="{{  $user->last_actived_at }}">{{ $user->last_actived_at->diffForHumans() }}</p>--}}
                 </div>
             </div>
@@ -45,6 +46,7 @@
                             </a>
                         </li>
                     </ul>
+{{--                    个人主页话题和回复分页--}}
                     @if (if_query('tab', 'replies'))
                         @include('users._replies', ['replies' => $user->replies()->with('topic')->recent()->paginate(5)])
                     @else

@@ -366,4 +366,35 @@
   pre code:after {
     content: normal;
   }
+
+}
+.trans-img{
+  overflow: hidden;
+}
+.trans-img img{
+  width: 200px;
+  height: 120px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.trans-img img:hover{
+  transform: scale(1.07);
+}
+.afont a{
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.afont a:hover{
+  color: #6cb2eb;
+}
+.cfont{
+  text-indent: 2em;
+  //overflow:hidden;
+  //text-overflow:ellipsis;
+  //white-space:nowrap;
+}
+.cfont a{
+  text-decoration: none;
 }

@@ -21,7 +21,8 @@ class TopicsController extends Controller
 	public function index(Request $request,Topic $topic,Link $link)
 	{
 //		$topics = Topic::with('user','category')->paginate(30);
-        $topics=$topic->withOrder($request->order)->paginate(20);
+//        航有圈分页
+        $topics=$topic->withOrder($request->order)->paginate(8);
         $links=$link->getAllCached();
 		return view('topics.index', compact('topics','links'));
 	}

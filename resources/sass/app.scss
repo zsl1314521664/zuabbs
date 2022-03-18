@@ -23,7 +23,27 @@ body{
   font-family: Helvetica, "Microsoft YaHei", Arial, sans-serif;
   font-size: 14px;
 }
-
+.nav-top{
+  height: 125px;
+  text-align: center;
+  letter-spacing: 8px;
+  font-size: 36px;
+  vertical-align: middle;
+  background-image: url("/uploads/images/static/school.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.nav-title{
+  position: relative;
+  top: 23%;
+}
+.nav-title img{
+  padding-right: 15px;
+  opacity: 0.85;
+}
+.nav-middle{
+  font-size: 1.3rem;
+}
 .navbar-static-top{
   border-color: #e7e7e7;
   background-color: #fff;

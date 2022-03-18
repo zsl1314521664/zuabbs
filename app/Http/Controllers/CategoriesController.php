@@ -19,7 +19,8 @@ class CategoriesController extends Controller
     public function show(Category $category,Request $request,Topic $topic,Link $link)
     {
 //        $topics=Topic::where('category_id',$category->id)->paginate(20);
-        $topics=$topic->withOrder($request->order)->where('category_id',$category->id)->paginate(20);
+//        分类列表分页
+        $topics=$topic->withOrder($request->order)->where('category_id',$category->id)->paginate(8);
 //        资源链接
         $links=$link->getAllCached();
         return view('topics.index',compact('topics','category','links'));

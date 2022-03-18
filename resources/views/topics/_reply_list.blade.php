@@ -40,6 +40,7 @@
             <hr>
         @endif
     @endforeach
+{{--    分类主页帖子分页--}}
         <div class="mt-5">
             {!! $replies->render() !!}
         </div>

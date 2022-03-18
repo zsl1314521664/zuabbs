@@ -22,7 +22,7 @@
         @include('layouts._footer')
     </div>
 {{--    sudo-su插件   --}}
-    @if (app()->isLocal())
+    @if(app()->isLocal())
         @include('sudosu::user-selector')
     @endif
     <script src="{{ mix('js/app.js') }}"></script>
