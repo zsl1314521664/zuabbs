@@ -48,7 +48,7 @@ body{
   border-color: #e7e7e7;
   background-color: #fff;
   box-shadow: 0px 1px 11px 2px rgba(42, 42, 42, 0.1);
-  border-top: 4px solid #00b5ad;
+  border-top: 4px solid rgba(52,144,220,0.5);
   border-bottom: 1px solid #e8e8e8;
   margin-bottom: 40px;
   margin-top: 0px;
@@ -170,3 +170,22 @@ body {
   }
 }
 
+//关于我们
+.aboutus{
+  a{
+    text-decoration: none;
+  }
+  p{
+    //text-indent: 2em;
+    font-size: 15px;
+  }
+  letter-spacing: 0.2em;
+}
+.nav-fix{
+  position: fixed;
+}
+.about_content{
+  background-color: #e9ecef;
+  padding: 2.5em;
+  border-radius: 15px;
+}

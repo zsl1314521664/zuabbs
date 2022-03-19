@@ -10,6 +10,11 @@ class PagesController extends Controller
     {
         return view('pages.root');
     }
+//    关于我们
+    public function about()
+    {
+        return view('pages.about');
+    }
 //    无权限提醒页面
     public function permissionDenied()
     {

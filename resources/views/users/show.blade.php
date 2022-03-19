@@ -18,6 +18,7 @@
                     <p>{{ $user->created_at }}</p>
 {{--                    {{ dd($user->created_at) }}--}}
                     <hr>
+{{--                    <a class="btn btn-outline-secondary btn-lg" href="{{ route('users.edit',Auth::id()) }}" role="button">修改信息</a>--}}
 {{--                    <h5><strong>最后活跃</strong></h5>--}}
 {{--                    <p title="{{  $user->last_actived_at }}">{{ $user->last_actived_at->diffForHumans() }}</p>--}}
                 </div>
@@ -42,7 +43,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link bg-transparent {{ active_class(if_query('tab', 'replies')) }}" href="{{ route('users.show', [$user->id, 'tab' => 'replies']) }}">
-                                Ta 的回复
+                                Ta 的动态
                             </a>
                         </li>
                     </ul>

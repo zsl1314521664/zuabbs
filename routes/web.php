@@ -15,8 +15,9 @@
 //    return view('welcome');
 //});
 
-//Route::get('/','PagesController@root')->name('root');
-Route::get('/','TopicsController@index')->name('root');
+Route::get('/','PagesController@root')->name('root');
+Route::get('about','PagesController@about')->name('about');
+//Route::get('/','TopicsController@index')->name('root');
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -50,3 +51,5 @@ Route::resource('replies','RepliesController',['only'=>['store','destroy']]);
 Route::resource('notifications','NotificationsController',['only'=>['index']]);
 //无权限提醒页面
 Route::get('permission-denied','PagesController@permissionDenied')->name('permission-denied');
+//校内地图
+Route::get('map','ExpandController@schoolmap')->name('map');

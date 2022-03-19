@@ -11,6 +11,7 @@
     <meta name="description" content="@yield('description', setting('seo_description', '在郑航校园生活服务平台'))" />
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @yield('styles')
+{{--    <base target="_blank" />--}}
 </head>
 <body>
     <div id="app" class="{{ route_class() }}-page">

@@ -25,4 +25,5 @@ class CategoriesController extends Controller
         $links=$link->getAllCached();
         return view('topics.index',compact('topics','category','links'));
     }
+
 }

@@ -1,6 +1,6 @@
 <div class="nav-top">
     <div class="nav-title">
-        <img src="/uploads/images/static/logo.png">在郑航校园生活服务平台
+        <img src="/uploads/images/static/logo.png"><span style="font-weight: bold;opacity: 0.8">在郑航校园生活服务平台</span>
     </div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top">
@@ -15,13 +15,52 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item {{ active_class(if_route('topics.index')) }}"><a class="nav-link" href="{{ route('topics.index') }}">航友圈</a></li>
-                <li class="nav-item {{ category_nav_active(1) }}"><a class="nav-link" href="{{ route('categories.show', 1) }}">分享</a></li>
-                <li class="nav-item {{ category_nav_active(2) }}"><a class="nav-link" href="{{ route('categories.show', 2) }}">教程</a></li>
-                <li class="nav-item {{ category_nav_active(3) }}"><a class="nav-link" href="{{ route('categories.show', 3) }}">问答</a></li>
-                <li class="nav-item {{ category_nav_active(4) }}"><a class="nav-link" href="{{ route('categories.show', 4) }}">公告</a></li>
+{{--                <li class="nav-item {{ active_class(if_route('topics.index')) }}"><a class="nav-link" href="{{ route('topics.index') }}">航友圈</a></li>--}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {{ active_class(if_route('topics.index')) }} {{ category_nav_active(1) }} {{ category_nav_active(2) }}{{ category_nav_active(3) }}{{ category_nav_active(4) }}{{ category_nav_active(5) }}{{ category_nav_active(6) }}{{ category_nav_active(7) }}"
+                       href="{{ route('topics.index') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        航友圈
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item {{ active_class(if_route('topics.index')) }}" href="{{ route('topics.index') }}">全部话题</a>
+                        <a class="dropdown-item {{ category_nav_active(1) }}" href="{{ route('categories.show', 1) }}">郑式通知</a>
+                        <a class="dropdown-item {{ category_nav_active(2) }}" href="{{ route('categories.show', 2) }}">失物招领&寻物启事</a>
+                        <a class="dropdown-item {{ category_nav_active(3) }}" href="{{ route('categories.show', 3) }}">兼职发布/勤工俭学</a>
+                        <a class="dropdown-item {{ category_nav_active(4) }}" href="{{ route('categories.show', 4) }}">社团/组织/比赛招募</a>
+                        <a class="dropdown-item {{ category_nav_active(5) }}" href="{{ route('categories.show', 5) }}">考研人</a>
+                        <a class="dropdown-item {{ category_nav_active(6) }}" href="{{ route('categories.show', 6) }}">职来职往</a>
+                        <a class="dropdown-item {{ category_nav_active(7) }}" href="{{ route('categories.show', 7) }}">其他帖子</a>
+{{--                        <div class="dropdown-divider"></div>--}}
+{{--                        <a class="dropdown-item" href="#">Something else here</a>--}}
+                    </div>
+                </li>
+                @guest
+                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">航发言</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">航信息</a></li>
+                @else
+                <li class="nav-item"><a class="nav-link {{ active_class(if_route('topics.create')) }}" href="{{ route('topics.create') }}">航发言</a></li>
+
+                <li class="nav-item"><a class="nav-link {{ info_nav_active(Auth::id()) }}" href="{{ route('users.show',Auth::id()) }}">航信息</a></li>
+{{--                航帮助--}}
+                @endguest
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {{ active_class(if_route('about')) }} {{ active_class(if_route('map')) }}"
+                       href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        航帮助
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item {{ active_class(if_route('about')) }}" href="{{ route('about') }}">关于我们</a>
+                        <a class="dropdown-item {{ active_class(if_route('map')) }}" href="{{ route('map') }}">校园地图</a>
+                    </div>
+                </li>
+{{--                <li class="nav-item {{ category_nav_active(3) }}"><a class="nav-link" href="{{ route('categories.show', 3) }}">问答</a></li>--}}
+{{--                <li class="nav-item"><a class="nav-link{{ active_class(if_route('about')) }}" href="{{ route('about') }}">航帮助</a></li>--}}
 
             </ul>
+            <form class="form-inline my-2 my-lg-0" style="margin-right: 20px">
+                <input class="form-control mr-sm-2" type="search" placeholder="站内搜索" aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">搜索</button>
+            </form>
             <ul class="navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @guest
