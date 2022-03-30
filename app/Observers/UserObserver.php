@@ -13,7 +13,7 @@ class UserObserver
     public function saving(User $user)
     {
         if(empty($user->avatar)){
-            $user->avatar='http://localhost:8000/uploads/images/avatars/202202/18/10_1645153385_gnqp7N4NSq.png';
+            $user->avatar='http://localhost:8000/uploads/images/avatars/202202/18/004.jpg';
         }
     }
     public function creating(User $user)

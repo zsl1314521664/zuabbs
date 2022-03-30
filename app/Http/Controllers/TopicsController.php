@@ -15,7 +15,7 @@ class TopicsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show','search']]);
     }
 
 	public function index(Request $request,Topic $topic,Link $link)
@@ -60,6 +60,24 @@ class TopicsController extends Controller
 		$topic->update($request->all());
 
 		return redirect()->route('topics.show', $topic->id)->with('success', '更新成功！');
+	}
+//搜索功能
+    public function search(Request $request,Topic $topic,Link $link)
+    {
+        $links=$link->getAllCached();
+        $search=$request->input('name');
+//        dd($search);
+        if (empty($search)){
+            dd('请输入内容');
+        }else{
+            $lists=Topic::where([
+                ['title','like',"%{$search}%"]
+            ])->orWhere([
+                ['body','like',"%{$search}%"]
+            ])->paginate(5);
+//            dd($lists);
+            return view('topics.search', compact('lists','links'));
+        }
 	}
 
 	public function destroy(Topic $topic)

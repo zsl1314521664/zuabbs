@@ -1,8 +1,8 @@
-<div class="nav-top">
-    <div class="nav-title">
-        <img src="/uploads/images/static/logo.png"><span style="font-weight: bold;opacity: 0.8">在郑航校园生活服务平台</span>
-    </div>
-</div>
+{{--<div class="nav-top">--}}
+{{--    <div class="nav-title">--}}
+{{--        <img src="/uploads/images/static/logo.png"><span style="font-weight: bold;opacity: 0.8">在郑航校园生活服务平台</span>--}}
+{{--    </div>--}}
+{{--</div>--}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top">
     <div class="container nav-middle">
         <!-- Branding Image -->
@@ -57,12 +57,11 @@
 {{--                <li class="nav-item"><a class="nav-link{{ active_class(if_route('about')) }}" href="{{ route('about') }}">航帮助</a></li>--}}
 
             </ul>
-            <form class="form-inline my-2 my-lg-0" style="margin-right: 20px">
-                <input class="form-control mr-sm-2" type="search" placeholder="站内搜索" aria-label="Search">
+            <form action="{{ route('search') }}" method="get" class="form-inline my-2 my-lg-0" style="margin-right: 20px">
+                <input class="form-control mr-sm-2" type="search" name="name" placeholder="搜索" required aria-label="Search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">搜索</button>
             </form>
             <ul class="navbar-nav navbar-right">
-                <!-- Authentication Links -->
                 @guest
                     <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">登录</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">注册</a></li>
