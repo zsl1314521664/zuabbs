@@ -10,9 +10,9 @@
                     <h2 class="">
                         <i class="far fa-edit"></i>
                         @if($topic->id)
-                            编辑话题
+                            编辑帖子
                         @else
-                            新建话题
+                            新建帖子
                         @endif
                     </h2>
 

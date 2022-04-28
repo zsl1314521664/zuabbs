@@ -27,9 +27,10 @@ class TopicsController extends Controller
 		return view('topics.index', compact('topics','links'));
 	}
 
-    public function show(Topic $topic)
+    public function show(Topic $topic,Link $link)
     {
-        return view('topics.show', compact('topic'));
+        $links=$link->getAllCached();
+        return view('topics.show', compact('topic','links'));
     }
 
 	public function create(Topic $topic)

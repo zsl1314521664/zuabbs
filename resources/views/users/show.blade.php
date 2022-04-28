@@ -38,7 +38,7 @@
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
                             <a class="nav-link bg-transparent {{ active_class(if_query('tab', null)) }}" href="{{ route('users.show', $user->id) }}">
-                                Ta 的话题
+                                Ta 的帖子
                             </a>
                         </li>
                         <li class="nav-item">

@@ -3,8 +3,8 @@
 use App\Models\Reply;
 
 return [
-    'title'   => '回复',
-    'single'  => '回复',
+    'title'   => '评论管理',
+    'single'  => '评论',
     'model'   => Reply::class,
 
     'columns' => [

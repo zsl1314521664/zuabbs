@@ -3,7 +3,7 @@
 use App\Models\Category;
 
 return [
-    'title'   => '分类',
+    'title'   => '分类管理',
     'single'  => '分类',
     'model'   => Category::class,
 

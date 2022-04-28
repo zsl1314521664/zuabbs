@@ -3,8 +3,8 @@
 use App\Models\Topic;
 
 return [
-    'title'   => '话题',
-    'single'  => '话题',
+    'title'   => '帖子管理',
+    'single'  => '帖子',
     'model'   => Topic::class,
 
     'columns' => [
@@ -13,7 +13,7 @@ return [
             'title' => 'ID',
         ],
         'title' => [
-            'title'    => '话题',
+            'title'    => '帖子',
             'sortable' => false,
             'output'   => function ($value, $model) {
                 return '<div style="max-width:260px">' . model_link($value, $model) . '</div>';
@@ -36,7 +36,7 @@ return [
             },
         ],
         'reply_count' => [
-            'title'    => '评论',
+            'title'    => '评论数量',
         ],
         'operation' => [
             'title'  => '管理',
@@ -69,16 +69,16 @@ return [
             'search_fields'      => ["CONCAT(id, ' ', name)"],
             'options_sort_field' => 'id',
         ],
-        'reply_count' => [
-            'title'    => '评论',
-        ],
-        'view_count' => [
-            'title'    => '查看',
-        ],
+//        'reply_count' => [
+//            'title'    => '评论',
+//        ],
+//        'view_count' => [
+//            'title'    => '查看',
+//        ],
     ],
     'filters' => [
         'id' => [
-            'title' => '内容 ID',
+            'title' => '帖子 ID',
         ],
         'user' => [
             'title'              => '用户',
